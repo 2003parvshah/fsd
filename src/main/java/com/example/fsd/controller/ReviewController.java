@@ -27,7 +27,7 @@ public List<Map<String , Object>> saveUser(@PathVariable String id) {
         Map<String, Object> reviewMap = new HashMap<>();
         reviewMap.put("movieid", review.getMovies().getId());
         reviewMap.put("username", review.getUser().getUsername());
-        reviewMap.put("id", review.getId());
+        reviewMap.put("id", review.getIdR());
         reviewMap.put("message", review.getMessage());
         reviewMap.put("rating", review.getRating());
 

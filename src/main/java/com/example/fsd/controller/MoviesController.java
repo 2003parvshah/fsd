@@ -30,6 +30,7 @@ public class MoviesController {
     @PutMapping("/{id}")
     public Optional<Movies> setMovies( @PathVariable String id , @RequestBody UpdateRatingDto updateRatingDto )
     {
+
         return moviesService.setMovies(updateRatingDto , id);
     }
 

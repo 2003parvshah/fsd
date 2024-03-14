@@ -1,6 +1,7 @@
 package com.example.fsd.entity;
 
 //import jakarta.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 //import jakarta.persistence.GeneratedValue;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 public class Movies
 {
         @Id
-        @GeneratedValue(strategy = IDENTITY)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer idM;
         private String id;
         private String cover_image;
@@ -36,6 +37,7 @@ public class Movies
         private String boxoffice_collection;
         private String rating_counts;
 
+        @JsonBackReference
         @ManyToMany(mappedBy = "moviesList")
         private List<User> userList;
 }

@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import static jakarta.persistence.GenerationType.IDENTITY;
+
 @Entity
 @Getter
 @Setter
@@ -15,19 +17,15 @@ import lombok.Setter;
 @Table(name = "review")
 public class Review {
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idR;
 
 //    @JsonBackReference
 @ManyToOne
     private Movies movies;
-
-//    private String movieId;
-
 //    @JsonBackReference
 @ManyToOne
     private User user;
-//    private String username;
     private String message;
     private String rating;
 }
